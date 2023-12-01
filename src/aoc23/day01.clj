@@ -4,7 +4,7 @@
 
 
 (def input (->> (slurp (io/resource "aoc23/day01.txt"))
-                  (str/split-lines)))
+                (str/split-lines)))
 
 (defn- tokenize [regex input]
   (map second (re-seq regex input)))
@@ -60,12 +60,12 @@ zoneight234
 7pqrstsixteen"))
   :rcf)
 
-  (comment
-    (tokenize #"(?=(one|two|five|\d))" "1blabla3fooo4five")
-    (token->digit "six")
-    (combine-digits '(2 3 4 6))
-    (combine-digits '(4))
-    (get-numbers #"(\d)" "1blabla3fooo4five")
-    (part-1 input)
-    (part-2 input)
-    :rcf)
+(comment
+  (tokenize #"(?=(one|two|five|\d))" "1blabla3fooo4five")
+  (token->digit "six")
+  (combine-digits '(2 3 4 6))
+  (combine-digits '(4))
+  (get-numbers #"(\d)" "1blabla3fooo4five")
+  (part-1 input)
+  (part-2 input)
+  :rcf)
